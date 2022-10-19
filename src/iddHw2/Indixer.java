@@ -43,7 +43,7 @@ public class Indixer {
 		Analyzer AnalyzerTitolo = CustomAnalyzer.builder()
 				.withTokenizer(WhitespaceTokenizerFactory.class)	//filtra gli spazi
 				.addTokenFilter(LowerCaseFilterFactory.class)		//filtra le lettere maiuscole
-				.addTokenFilter(WordDelimiterGraphFilterFactory.class)		//filtra le parole più comuni
+				.addTokenFilter(WordDelimiterGraphFilterFactory.class)		//filtra dei caratteri di punteggiatura
 				.build();
 
 
