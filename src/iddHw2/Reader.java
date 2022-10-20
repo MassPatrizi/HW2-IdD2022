@@ -35,11 +35,11 @@ public class Reader {
 		Query query = parser.parse(keyboard.nextLine());
 		System.out.println("\n");
 		keyboard.close();
-		TopDocs hits = searcher.search(query, 3);
+		TopDocs hits = searcher.search(query, 5);
 		for (int i = 0; i < hits.scoreDocs.length; i++) { 
 			ScoreDoc scoreDoc = hits.scoreDocs[i]; 
 			Document doc = searcher.doc(scoreDoc.doc);
-			System.out.println("Doc #"+scoreDoc.doc + ": "+ doc.get("nome") + " (" + scoreDoc.score +")");
+			System.out.println("Doc "+scoreDoc.doc + ": "+ doc.get("nome") + " (" + scoreDoc.score +")");
 			Explanation explanation = searcher.explain(query, scoreDoc.doc);
 			System.out.println(explanation);
 		}
